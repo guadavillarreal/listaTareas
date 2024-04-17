@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import ListaTareas from "./ListaTareas";
 //rsc: para crear el esqueleto del arch
 const FormularioTareas = () => {
   return (
@@ -12,6 +13,7 @@ const FormularioTareas = () => {
           {/*btn */}
           <Button variant="success" className="mx-2" type="submit">Agregar Tarea</Button>
         </Form.Group>
+        <ListaTareas/>
       </Form>
     </section>
   );

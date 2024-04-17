@@ -1,3 +1,5 @@
+{/*import { Button, from} from "react-bootstrap"; */}
+{/*puedo import de esta manera o mas simplificado -arriba- cuando forman parte de la misma libreria*/}
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ListaTareas from "./ListaTareas";

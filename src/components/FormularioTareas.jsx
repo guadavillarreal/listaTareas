@@ -21,10 +21,11 @@ const FormularioTareas = () => {
     setTarea("");
   };
   //creo la func borrar tarea desde el padre porq no puedo enviar info desde el hijo al padre
-  const borrarTarea=( nombreTarea) =>{
+  const borrarTarea = (nombreTarea) => {
     //siempre verificar los metodos mutables o inmutables para que no modifiquen mi obj, por ej ahora el array
-    
-  }
+    const copiaTareas = tareas.filter((tarea) => tarea !== nombreTarea);
+    setTareas(copiaTareas);
+  };
   return (
     <section>
       {/*llamada ala func handleSubmit para guardar los cambio por el evento submit */}
@@ -55,7 +56,7 @@ const FormularioTareas = () => {
         {/*envio de props: <ListaTareas tareas={tarea}/>: izq: nombProps={valorqguardo}*/}
       </Form>
       {/*tareas={tareas}: declaracion del prosp a enviar al hijo */}
-      <ListaTareas tareas={tareas} />
+      <ListaTareas tareas={tareas} borrarTarea={borrarTarea} />
     </section>
   );
 };

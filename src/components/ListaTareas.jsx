@@ -9,9 +9,17 @@ const ListaTareas = (props) => {
         
         //desestructuradamente: tareas.map(() => (
         props.tareas.map(() => (<ItemTareas />))} */}
-      {//las llaves indican que hare logica de js
-        props.tareas.map((elementoTarea, posocionTarea)=><ItemTareas key={posocionTarea} nombreTarea={elementoTarea} />)
-      //key: nombare de id unico que para react; nombreTarea:props que recibe lo que escribo en la tarea
+      {
+        //las llaves indican que hare logica de js
+        props.tareas.map((elementoTarea, posocionTarea) => (
+          <ItemTareas
+            key={posocionTarea}
+            nombreTarea={elementoTarea}
+          //Prosp:estructurado-crea en el padre lo reenvia al hijo: borrarTarea={props.borrarTarea}
+            borrarTarea={props.borrarTarea}
+          />
+        ))
+        //key: nombare de id unico que para react; nombreTarea:props que recibe lo que escribo en la tarea
       }
     </ListGroup>
   );

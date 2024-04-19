@@ -1,9 +1,5 @@
-{
-  /*import { Button, from} from "react-bootstrap"; */
-}
-{
-  /*puedo import de esta manera o mas simplificado -arriba- cuando forman parte de la misma libreria*/
-}
+//import { Button, from} from "react-bootstrap"; */
+//puedo import de esta manera o mas simplificado -arriba- cuando forman parte de la misma libreria*/
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ListaTareas from "./ListaTareas";
@@ -20,9 +16,9 @@ const FormularioTareas = () => {
     console.log("desde el evento submit");
     e.preventDefault();
     //tareas.push(asd); no se puede modificar directamente xloq buscamos una alternativa
-    setTareas([...tareas,tarea])
+    setTareas([...tareas, tarea]);
     //limpiar el formulario- solo 1 elem
-    setTarea('');
+    setTarea("");
   };
   return (
     <section>
@@ -51,8 +47,9 @@ const FormularioTareas = () => {
             Agregar Tarea
           </Button>
         </Form.Group>
-        <ListaTareas />
+        {/*envio de props: <ListaTareas tareas={tarea}/>: izq: nombProps={valorqguardo}*/}
       </Form>
+      <ListaTareas tareas={tareas} />
     </section>
   );
 };

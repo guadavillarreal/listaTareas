@@ -49,6 +49,7 @@ const FormularioTareas = () => {
         </Form.Group>
         {/*envio de props: <ListaTareas tareas={tarea}/>: izq: nombProps={valorqguardo}*/}
       </Form>
+      {/*tareas={tareas}: declaracion del prosp a enviar al hijo */}
       <ListaTareas tareas={tareas} />
     </section>
   );

@@ -11,8 +11,10 @@ import { useState } from "react";
 //rsc: para crear el esqueleto del arch
 const FormularioTareas = () => {
   //la logica del componente
-  //state
+  //state´s:funciones
   const [tarea, setTarea] = useState("");
+  //array que guarda las tareas
+  const [tareas, setTareas] = useState([])
 
   return (
     <section>
@@ -33,6 +35,7 @@ const FormularioTareas = () => {
 //lo comento porq me da error puede que sea porq tiene que ser una func de una linea:console.log(e.target.value)
             setTarea(e.target.value)
           }
+          value={tarea}
           />
           {/*btn */}
           <Button variant="success" className="mx-2" type="submit">

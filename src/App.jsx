@@ -7,7 +7,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <Container className="my-4">
+    {/*mainPageclase: que creo para poder bajar el footer*/}
+      <Container className="my-4 mainPage">
         <h1 className="text-center display-3">Lista de Tareas</h1>
         <FormularioTareas />
       </Container>

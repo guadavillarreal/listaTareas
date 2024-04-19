@@ -14,11 +14,20 @@ const FormularioTareas = () => {
   //state´s:funciones
   const [tarea, setTarea] = useState("");
   //array que guarda las tareas
-  const [tareas, setTareas] = useState([])
-
+  const [tareas, setTareas] = useState([]);
+  //func que maneja ele vento submit
+  const handleSubmit = (e) => {
+    console.log("desde el evento submit");
+    e.preventDefault();
+    //tareas.push(asd); no se puede modificar directamente xloq buscamos una alternativa
+    setTareas([...tareas,tarea])
+    //limpiar el formulario- solo 1 elem
+    setTarea('');
+  };
   return (
     <section>
-      <Form>
+      {/*llamada ala func handleSubmit para guardar los cambio por el evento submit */}
+      <Form onSubmit={handleSubmit}>
         <Form.Group
           className="mb-3 d-flex"
           controlId="exampleForm.ControlInput1"
@@ -30,12 +39,12 @@ const FormularioTareas = () => {
             placeholder="Ej: tarea 1"
             minLength={3}
             maxLength={50}
-            onChange={(e)=>
-//para ver el valor que trae el e.target.value:  console.log(e.target.value)
-//lo comento porq me da error puede que sea porq tiene que ser una func de una linea:console.log(e.target.value)
-            setTarea(e.target.value)
-          }
-          value={tarea}
+            onChange={(e) =>
+              //para ver el valor que trae el e.target.value:  console.log(e.target.value)
+              //lo comento porq me da error puede que sea porq tiene que ser una func de una linea:console.log(e.target.value)
+              setTarea(e.target.value)
+            }
+            value={tarea}
           />
           {/*btn */}
           <Button variant="success" className="mx-2" type="submit">

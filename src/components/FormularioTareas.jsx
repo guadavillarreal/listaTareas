@@ -20,6 +20,11 @@ const FormularioTareas = () => {
     //limpiar el formulario- solo 1 elem
     setTarea("");
   };
+  //creo la func borrar tarea desde el padre porq no puedo enviar info desde el hijo al padre
+  const borrarTarea=( nombreTarea) =>{
+    //siempre verificar los metodos mutables o inmutables para que no modifiquen mi obj, por ej ahora el array
+    
+  }
   return (
     <section>
       {/*llamada ala func handleSubmit para guardar los cambio por el evento submit */}

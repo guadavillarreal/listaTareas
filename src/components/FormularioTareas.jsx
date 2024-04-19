@@ -13,7 +13,7 @@ const FormularioTareas = () => {
   const [tareas, setTareas] = useState([]);
   //func que maneja ele vento submit
   const handleSubmit = (e) => {
-    console.log("desde el evento submit");
+    //console.log("desde el evento submit");
     e.preventDefault();
     //tareas.push(asd); no se puede modificar directamente xloq buscamos una alternativa
     setTareas([...tareas, tarea]);

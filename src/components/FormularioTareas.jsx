@@ -3,14 +3,24 @@
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ListaTareas from "./ListaTareas";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 //rsc: para crear el esqueleto del arch
 const FormularioTareas = () => {
   //la logica del componente-- "tarea y tareas" son hooks y por lo consecuente estados
   //state´s:funciones
   const [tarea, setTarea] = useState("");
-  //array que guarda las tareas
-  const [tareas, setTareas] = useState([]);
+  //en el montage siempr carga como array vacio xloq se crea una var para que guarde y inicalice deacuerdo lo que tenga guardado
+  const tareasLocalStorage = JSON.parse(localStorage.getItem('listaTareas')) || [];
+  //array que guarda las tareas---cuando cambia el estado quiero hacer algo con el periodo de vida del comp, xloq invoco a useEffect
+  const [tareas, setTareas] = useState(tareasLocalStorage);
+
+  //func useEffect-c/q cambia el montage se ejecuta-si necesito ejecutar un codigo en montage y en act de todos los estados
+  useEffect(()=>{
+    console.log("aqui deberia guardar en el local Storage");
+//si slo lo quiero usar en montaje seria: "},[])" - 
+//tambien se puede aclarar para que estado me interesa actualizarlo: "},[nombreState])" 
+    localStorage.setItem('listaTareas',JSON.stringify(tareas));
+},[tareas])
   //func que maneja ele vento submit
   const handleSubmit = (e) => {
     //console.log("desde el evento submit");

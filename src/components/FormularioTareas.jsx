@@ -6,7 +6,7 @@ import ListaTareas from "./ListaTareas";
 import { useState } from "react";
 //rsc: para crear el esqueleto del arch
 const FormularioTareas = () => {
-  //la logica del componente
+  //la logica del componente-- "tarea y tareas" son hooks y por lo consecuente estados
   //state´s:funciones
   const [tarea, setTarea] = useState("");
   //array que guarda las tareas
